@@ -4,8 +4,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -18,13 +21,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/eurekaProduct")
 public class EurekaProductController {
+	private static Logger logger = Logger
+			.getLogger(EurekaProductController.class);
+	@Value("${server.port}")
+	private String port;
 
 	/**
-	 * @see /eurekaProduct/registEurekaService.do
+	 * @see http://127.0.0.1:8762/eurekaProduct/registEurekaService.do
 	 */
 	@ResponseBody
-	@RequestMapping("/registEurekaService")
-	public Object registEurekaService() {
+	@RequestMapping(value = "/registEurekaService")
+	public Object registEurekaService(String userName, Integer age) {
+		logger.info("eureka生产端:" + port + "," + userName + "," + age);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("time", new Date());
 		map.put("aaa", "zhaotfaaa");

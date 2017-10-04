@@ -8,9 +8,9 @@
 		<artifactId>spring-cloud-netflix-ztf</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>netflix-cloud-eureka-server</artifactId>
+	<artifactId>netflix-cloud-ribbon-server</artifactId>
 	<packaging>war</packaging>
-	<name>netflix-cloud-eureka-server Maven Webapp</name>
+	<name>netflix-cloud-ribbon-server Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -22,7 +22,15 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-eureka</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-ribbon</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
@@ -30,11 +38,10 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 	</dependencies>
 
 	<build>
-		<finalName>netflix-cloud-eureka-server</finalName>
+		<finalName>netflix-cloud-ribbon-server</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

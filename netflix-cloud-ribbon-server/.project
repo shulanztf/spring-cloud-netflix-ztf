@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>netflix-cloud-eureka-product</name>
+	<name>netflix-cloud-ribbon-server</name>
 	<comment></comment>
 	<projects>
 	</projects>
