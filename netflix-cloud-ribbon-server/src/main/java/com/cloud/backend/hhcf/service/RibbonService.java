@@ -24,15 +24,24 @@ public class RibbonService {
 
 	public String hiService(String name) {
 		logger.info("ribbon serivce端:" + name);
-		Map old =  restTemplate.getForObject(
-				 "http://hmlcserver/eurekaProduct/registEurekaService.do?userName="
-				 + name, Map.class);
+		Map old = restTemplate.getForObject(
+				"http://hmlcserver/eurekaProduct/registEurekaService.do?userName="
+						+ name, Map.class);
 		logger.info("ribbon serivce端,AAA:" + name + "," + old.toString());
-		
+
 		String url = restTemplate.getForObject(
 				"http://hmlcserver/getHello?uame=" + name, String.class);
 		logger.info("ribbon serivce端:" + name + "," + url);
 		return url;
+	}
+
+	public Object getConfig(String name) {
+		logger.info("ribbon serivce端:" + name);
+		Map old = restTemplate.getForObject(
+				"http://hmlcserver/eurekaProduct/registEurekaService.do?userName="
+						+ name, Map.class);
+		logger.info("ribbon serivce端,AAA:" + name + "," + old.toString());
+		return old;
 	}
 
 }

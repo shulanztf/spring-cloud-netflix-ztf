@@ -26,14 +26,25 @@ public class RibbonServerController {
 	private RibbonService ribbonService;
 
 	/**
-	 * @see /ribbonServer/findRetomeServer.do
+	 * @see http://127.0.0.1:8764/ribbonServer/findRetomeServer.do
 	 * @return Object
 	 * @throws
 	 */
+	@ResponseBody
 	@RequestMapping("/findRetomeServer")
 	public String findRetomeServer(String name) {
 		logger.info("ribbon测试:" + name);
 		return ribbonService.hiService(name);
+	}
+	
+	/**
+	 * @see http://127.0.0.1:8764/ribbonServer/getConfig.do
+	 */
+	@ResponseBody
+	@RequestMapping("/getConfig")
+	public Object getConfig(String name) {
+		logger.info("ribbon测试:" + name);
+		return ribbonService.getConfig(name);
 	}
 
 }

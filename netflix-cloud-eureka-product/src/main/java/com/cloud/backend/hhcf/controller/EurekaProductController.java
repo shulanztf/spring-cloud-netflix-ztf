@@ -32,10 +32,12 @@ public class EurekaProductController {
 	@ResponseBody
 	@RequestMapping(value = "/registEurekaService")
 	public Object registEurekaService(String userName, Integer age) {
-		logger.info("eureka生产端:" + port + "," + userName + "," + age);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("time", new Date());
 		map.put("aaa", "zhaotfaaa");
+		map.put("port", port);
+		logger.info("eureka生产端:" + port + "," + userName + "," + age + ","
+				+ map.toString());
 		return map;
 	}
 
