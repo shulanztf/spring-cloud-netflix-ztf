@@ -7,6 +7,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.fastjson.JSON;
+import com.cloud.backend.hhcf.model.HmMoneyMgModel;
+import com.cloud.backend.hhcf.model.HmUserMgModel;
 import com.cloud.backend.hhcf.service.RibbonService;
 
 /**
@@ -26,6 +29,19 @@ public class RibbonServerController {
 	private RibbonService ribbonService;
 
 	/**
+	 * netflix-ribbot对象参数测试
+	 * 
+	 * @see http://127.0.0.1:8764/ribbonServer/saveSaveOrderInfo.do
+	 */
+	@ResponseBody
+	@RequestMapping("/saveSaveOrderInfo")
+	public Object saveSaveOrderInfo() {
+		HmMoneyMgModel order = this.ribbonService.saveSaveOrderInfo();
+		logger.info("netflix-ribbot学习,对象参数测试:" + JSON.toJSONString(order));
+		return order;
+	}
+
+	/**
 	 * @see http://127.0.0.1:8764/ribbonServer/findRetomeServer.do
 	 * @return Object
 	 * @throws
@@ -36,7 +52,7 @@ public class RibbonServerController {
 		logger.info("ribbon测试:" + name);
 		return ribbonService.hiService(name);
 	}
-	
+
 	/**
 	 * @see http://127.0.0.1:8764/ribbonServer/getConfig.do
 	 */

@@ -1,6 +1,7 @@
 package com.cloud.backend.hhcf.controller;
 
 import java.util.Date;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -9,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alibaba.fastjson.JSON;
+import com.cloud.backend.hhcf.model.HmMoneyMgModel;
+import com.cloud.backend.hhcf.model.HmUserMgModel;
 import com.cloud.backend.hhcf.service.FeignSchedualService;
 
 /**
@@ -42,9 +46,26 @@ public class FeignSchedualController {
 	 */
 	@RequestMapping("/getConfig")
 	public Object getConfig() {
-		Object map = this.feignSchedualService.registEurekaService("ztf", 3);
+		Map<String, Object> map = this.feignSchedualService
+				.registEurekaService("ztf", 3);
 		logger.info("feign学习bb:" + map.toString());
 		return map.toString();
+	}
+
+	/**
+	 * 对象参数测试
+	 * 
+	 * @see http://127.0.0.1:8765/feignSchedual/saveSaveOrderInfo.do
+	 */
+	@RequestMapping("/saveSaveOrderInfo")
+	public Object saveSaveOrderInfo() {
+		HmUserMgModel userInfo = new HmUserMgModel();
+		userInfo.setAge(32);
+		userInfo.setUserName("ztf中文测试");
+		HmMoneyMgModel order = this.feignSchedualService
+				.saveSaveOrderInfo(userInfo);
+		logger.info("feign学习,对象参数测试:" + JSON.toJSONString(order));
+		return order;
 	}
 
 }
