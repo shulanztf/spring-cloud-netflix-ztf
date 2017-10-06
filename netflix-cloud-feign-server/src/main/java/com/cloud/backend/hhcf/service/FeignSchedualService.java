@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cloud.backend.hhcf.model.HmMoneyMgModel;
 import com.cloud.backend.hhcf.model.HmUserMgModel;
+import com.cloud.backend.hhcf.service.impl.FeignSchedualServiceImpl;
 
 /**
  * 
@@ -17,7 +18,7 @@ import com.cloud.backend.hhcf.model.HmUserMgModel;
  * @author: zhaotf
  * @date: 2017年10月6日 上午7:23:17
  */
-@FeignClient(value = "hmlcserver")
+@FeignClient(value = "hmlcserver", fallback = FeignSchedualServiceImpl.class)
 public interface FeignSchedualService {
 
 	/**
@@ -26,6 +27,9 @@ public interface FeignSchedualService {
 	@RequestMapping(value = "/getHello")
 	public String sayHiFromClientOne(@RequestParam(value = "uName") String uName);
 
+	/**
+	 * 服务调用
+	 */
 	@RequestMapping(value = "/eurekaProduct/registEurekaService")
 	public Map<String, Object> registEurekaService(
 			@RequestParam(value = "userName") String userName,

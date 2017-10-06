@@ -38,7 +38,7 @@ public class FeignSchedualController {
 	public Object sendFeignMsg(String uName) {
 		String rslt = feignSchedualService.sayHiFromClientOne(uName);
 		logger.info("feign学习aa:" + uName + "," + rslt);
-		return new Date().toString();
+		return rslt;
 	}
 
 	/**
