@@ -17,5 +17,6 @@
     <module>netflix-cloud-eureka-server</module>
     <module>netflix-cloud-eureka-product</module>
     <module>netflix-cloud-ribbon-server</module>
+    <module>netflix-cloud-feign-server</module>
   </modules>
 </project>
