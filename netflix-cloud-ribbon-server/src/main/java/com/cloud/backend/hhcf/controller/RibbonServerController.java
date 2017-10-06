@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
 import com.cloud.backend.hhcf.model.HmMoneyMgModel;
-import com.cloud.backend.hhcf.model.HmUserMgModel;
 import com.cloud.backend.hhcf.service.RibbonService;
 
 /**

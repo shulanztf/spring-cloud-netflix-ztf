@@ -8,15 +8,12 @@ import javax.annotation.Resource;
 import org.apache.log4j.Logger;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import com.alibaba.fastjson.JSON;
 import com.cloud.backend.hhcf.model.HmMoneyMgModel;
 import com.cloud.backend.hhcf.model.HmUserMgModel;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.ribbon.proxy.annotation.Hystrix;
 
 /**
  * 
