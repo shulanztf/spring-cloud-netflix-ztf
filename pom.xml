@@ -21,5 +21,6 @@
     <module>netflix-cloud-zuul-server</module>
     <module>netflix-cloud-eureka-server-master</module>
     <module>netflix-cloud-eureka-server-backup</module>
+    <module>netflix-cloud-eureka-server-peer3</module>
   </modules>
 </project>
