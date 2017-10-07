@@ -31,6 +31,11 @@ public class FeignSchedualController {
 	@Resource
 	private FeignSchedualService feignSchedualService;
 
+	@RequestMapping("/getZuulMsg")
+	public String getZuulMsg() {
+		return "feign来源";
+	}
+	
 	/**
 	 * @see http://127.0.0.1:8765/feignSchedual/sendFeignMsg.do
 	 */
@@ -38,7 +43,7 @@ public class FeignSchedualController {
 	public Object sendFeignMsg(String uName) {
 		String rslt = feignSchedualService.sayHiFromClientOne(uName);
 		logger.info("feign学习aa:" + uName + "," + rslt);
-		return rslt;
+		return "feign:" + rslt;
 	}
 
 	/**

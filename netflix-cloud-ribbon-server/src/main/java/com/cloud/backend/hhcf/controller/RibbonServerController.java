@@ -49,7 +49,7 @@ public class RibbonServerController {
 	@RequestMapping("/findRetomeServer")
 	public String findRetomeServer(String name) {
 		logger.info("ribbon测试:" + name);
-		return ribbonService.hiService(name);
+		return "ribbon:" + ribbonService.hiService(name);
 	}
 
 	/**
