@@ -19,5 +19,7 @@
     <module>netflix-cloud-ribbon-server</module>
     <module>netflix-cloud-feign-server</module>
     <module>netflix-cloud-zuul-server</module>
+    <module>netflix-cloud-eureka-server-master</module>
+    <module>netflix-cloud-eureka-server-backup</module>
   </modules>
 </project>
